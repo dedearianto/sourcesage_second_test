@@ -1,3 +1,4 @@
+from itertools import combinations
 try:
     n_total = int(input("please input total number (N) :"))
 except ValueError:
@@ -14,19 +15,12 @@ total = 0
 temp =[]
 x_list_set = set(nn for nn in x_list)
 print("#################trace#################################")
-for x in range(len(x_list)):
-    for y in range(len(x_list)):
-        xx = {x_list[y],x_list[x]}
-        if xx in temp:
-            continue
-        else:
-            temp.append(xx)
-        print("x " +str(x) +" y " +str(y) +" temp :" +str(temp))
+for x in range(0,len(x_list)+1):
+    for y in combinations(x_list, x):
+        xx = y
+        temp.append(xx)
+        print("x " +str(x) +" y " +str(y) +" temp :" +str(xx))
 
-if x_list_set in temp:
-    pass
-else:
-    temp.append(x_list_set)
 print("#################trace#################################")
 
 for data in temp:
