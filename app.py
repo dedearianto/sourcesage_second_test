@@ -17,7 +17,7 @@ x_list_set = set(nn for nn in x_list)
 print("#################trace#################################")
 for x in range(0,len(x_list)+1):
     for y in combinations(x_list, x):
-        xx = y
+        xx = set(y)
         temp.append(xx)
         print("x " +str(x) +" y " +str(y) +" temp :" +str(xx))
 
